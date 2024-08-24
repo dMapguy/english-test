@@ -38,8 +38,8 @@ jobs:
 
       - name: Commit changes
         env:
-          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+          GIT_USERNAME: dMapguy
+          GIT_EMAIL: zmapguy@gmail.com
         run: |
           git config --global user.name "${GIT_USERNAME}"
           git config --global user.email "${GIT_EMAIL}"
