@@ -15,11 +15,11 @@ jobs:
     - name: Log in to the Container registry
       uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
       with:
-       registry: ghcr.io
+       registry: docker.pkg.github.com
        username: ${{ github.actor }}
        password: ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-          docker build . -t ghcr.io/$(echo ${{github.actor}} | tr '[:upper:]' '[:lower:]')/technologent-v2;
-          docker push ghcr.io/$(echo ${{github.actor}} | tr '[:upper:]' '[:lower:]')/technologent-v2;
+          docker build . -t docker.pkg.github.com/$(echo ${{github.actor}} | tr '[:upper:]' '[:lower:]')/technologent-v2;
+          docker push docker.pkg.github.com/$(echo ${{github.actor}} | tr '[:upper:]' '[:lower:]')/technologent-v2;
